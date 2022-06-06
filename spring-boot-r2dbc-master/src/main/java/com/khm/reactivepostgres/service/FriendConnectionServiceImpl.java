@@ -119,7 +119,6 @@ public class FriendConnectionServiceImpl implements FriendConnectionService {
                         .map(itemDTO -> new UserResponse(itemDTO.stream().map(object -> Objects.toString(object.getEmail(), null)).collect(Collectors.toList()), itemDTO.size())));
     }
 
-    //TODO transactional doesn't work
     @Transactional
     @Override
     public Mono<List<FriendConnection>> subscribeFriendUpdatesByEmails(FriendUpdatesRequest request) {
